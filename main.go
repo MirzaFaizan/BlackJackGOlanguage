@@ -1,25 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main(){
 	//var card string = "Ace of 2"
 
 	//USE colon equal only when declaring
-	cards := [] string{
-		newCard(),
-		newCard(),
-	}
-	cards= append(cards,newCard())
+	cards := newDeck()
 
-	for i, card:= range cards {
-		fmt.Println(i, card)
-	}
-
-}
-
-func newCard () string{
-	return "Five of diamonds"
+	hand,remainingDeck := Deal(cards,5)
+	hand.print()
+	remainingDeck.print()
 }
