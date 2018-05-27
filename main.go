@@ -4,8 +4,9 @@ import (
 	"fmt"
 )
 
+
 func main(){
 	cards:=newDeck()
-	fmt.Println(cards.toString())
-	
+	cards.saveToFile("my_cards")
+	fmt.Println(newDeckFromFile("my_cards"))
 }
