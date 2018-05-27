@@ -1,5 +1,6 @@
 package main
 import (
+	"time"
 	"os"
 	"io/ioutil"
 	"fmt"
@@ -18,8 +19,9 @@ func (d deck) print(){
 }
 
 func (d deck) shuffle(){
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i:= range d{
-		newPosition:=rand.Intn(len(d)-1)
+		newPosition:=r.Intn(len(d)-1)
 		d[i],d[newPosition]=d[newPosition],d[i]
 	}
 }
